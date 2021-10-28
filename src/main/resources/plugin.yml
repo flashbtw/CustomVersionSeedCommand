@@ -1,0 +1,7 @@
+name: CustomVersionSeedCommand
+version: '${project.version}'
+main: de.flashyboi.minecraft.plugins.customversionseedcommand.CustomVersionSeedCommand
+api-version: 1.17
+authors: [ flash_btw ]
+description: shows a configurable message at /version and /seed
+website: http://gammellounge.de
