@@ -1,10 +1,13 @@
 name: CustomVersionSeedCommand
-version: 1.0.0
+version: ${project.version}
 main: de.flashyboi.minecraft.plugins.customversionseedcommand.CustomVersionSeedCommand
 api-version: 1.17
 authors: [ flash_btw ]
 description: shows a configurable message at /version and /seed
 website: http://gammellounge.de
 
-
-
+permissions:
+  CustomVersionSeedCommand.original.versioncommand:
+    description: "allows the player to see the actual bukkit version command"
+  CustomVersionSeedCommand.original.seedcommand:
+    description: "allows the player to see the actual seed"
