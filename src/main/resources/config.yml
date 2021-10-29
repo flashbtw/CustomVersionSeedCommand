@@ -1,0 +1,25 @@
+#The message the plugin is going to send when typed /version by a player
+#that doesn't have the "CustomVersionSeedCommand.original.versioncommand"
+#permission.
+#
+#NOTE: Hex Color support is implemented in 1.16 and later. You may NOT use
+#non-Hexadecimal Color Codes. (e.g. &f, &a, &4, etc.)
+#
+Version:
+  message:
+    - ''
+    - ''
+#
+#The message the plugin is going to send when typed /version by a player
+#that doesn't have the "CustomVersionSeedCommand.original.versioncommand"
+#permission.
+#
+#NOTE: Hex Color support is implemented in 1.16 and later. You may NOT use
+#non-Hexadecimal Color Codes. (e.g. &f, &a, &4, etc.)
+#
+Seed:
+  message:
+    - ''
+    - ''
+#
+#end of config
