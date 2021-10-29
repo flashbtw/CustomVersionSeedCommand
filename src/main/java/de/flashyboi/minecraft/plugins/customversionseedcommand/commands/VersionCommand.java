@@ -34,8 +34,6 @@ public class VersionCommand implements Listener {
             customVersionCommand(e.getPlayer(), e);
         } else if (command.equalsIgnoreCase("/ver")) {
             customVersionCommand(e.getPlayer(), e);
-        } else {
-            return;
         }
     }
 
