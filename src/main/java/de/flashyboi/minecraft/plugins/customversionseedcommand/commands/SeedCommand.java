@@ -23,7 +23,7 @@ public class SeedCommand implements Listener {
     private final Pattern pattern = Pattern.compile(HEX_CODE_REGEX);
 
     private final FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
-    private final List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.VERSION_SECTION).getStringList(ConfigVariables.STRING_LIST_VERSION_MESSAGE);
+    private final List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.SEED_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerExecutingVersionCommand(PlayerCommandPreprocessEvent e) {
@@ -41,6 +41,8 @@ public class SeedCommand implements Listener {
                     e.setCancelled(true);
                 }
             }
+        } else {
+            return;
         }
     }
     private String hexCodeFormatter(String msg) {

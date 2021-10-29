@@ -30,19 +30,24 @@ public class VersionCommand implements Listener {
 
         String command = e.getMessage();
 
-        if(command.equalsIgnoreCase("/version")) {
-            Player player = e.getPlayer();
-            if(player.hasPermission("CustomVersionSeedCommand.original.versioncommand")) {
-                e.setMessage(BUKKIT_VERSION);
-            } else {
-                for(String one_line : all_lines) {
-                    one_line = hexCodeFormatter(one_line);
-                    player.sendMessage(one_line);
-                    e.setCancelled(true);
-                }
-            }
+        if (command.equalsIgnoreCase("/version")) {
+            customVersionCommand(e.getPlayer(), e);
+        } else if (command.equalsIgnoreCase("/ver")) {
+            customVersionCommand(e.getPlayer(), e);
         } else {
             return;
+        }
+    }
+
+    private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e) {
+        if(player.hasPermission("CustomVersionSeedCommand.original.versioncommand")) {
+            e.setMessage(BUKKIT_VERSION);
+        } else {
+            for (String one_line : all_lines) {
+                one_line = hexCodeFormatter(one_line);
+                player.sendMessage(one_line);
+            }
+            e.setCancelled(true);
         }
     }
     private String hexCodeFormatter(String msg) {

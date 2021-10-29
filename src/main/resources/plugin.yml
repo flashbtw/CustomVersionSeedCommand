@@ -1,13 +1,10 @@
 name: CustomVersionSeedCommand
-version: '${project.version}'
+version: 1.0.0
 main: de.flashyboi.minecraft.plugins.customversionseedcommand.CustomVersionSeedCommand
 api-version: 1.17
 authors: [ flash_btw ]
 description: shows a configurable message at /version and /seed
 website: http://gammellounge.de
-commands:
-  version:
-    description: "Custom /version command"
-    aliases: v, ver, vers,
+
 
 

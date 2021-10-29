@@ -7,11 +7,12 @@
 #
 Version:
   message:
-    - ''
-    - ''
+    - '&#ff0000Version'
+    - 'Custom'
+    - '&#00ff00Message'
 #
 #The message the plugin is going to send when typed /version by a player
-#that doesn't have the "CustomVersionSeedCommand.original.versioncommand"
+#that doesn't have the "CustomVersionSeedCommand.original.seedcommand"
 #permission.
 #
 #NOTE: Hex Color support is implemented in 1.16 and later. You may NOT use
@@ -19,7 +20,8 @@ Version:
 #
 Seed:
   message:
-    - ''
-    - ''
+    - '&#ff0000Seed'
+    - 'Custom'
+    - '&#00ff00Message'
 #
 #end of config
