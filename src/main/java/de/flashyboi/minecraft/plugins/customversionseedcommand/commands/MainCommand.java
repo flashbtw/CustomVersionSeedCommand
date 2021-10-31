@@ -18,9 +18,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (args[0].equalsIgnoreCase("reload")) {
-            if (!(sender instanceof Player)) {
-                return false;
-            }
             if (!(sender.hasPermission("CustomVersionSeedCommand.reload"))) {
                 String no_perms_for_reload = CustomVersionSeedCommand.plugin.getConfig().getString(ConfigVariables.NO_PERMISSION_RELOAD);
                 HexCodeFormatter message = new HexCodeFormatter(no_perms_for_reload);
@@ -29,6 +26,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 return false;
             }
             CustomVersionSeedCommand.plugin.reloadConfig();
+            sender.sendMessage("CustomVersionSeedCommand was reloaded!");
             return true;
         }
         if (args.length > 1){
