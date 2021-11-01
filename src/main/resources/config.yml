@@ -1,27 +1,47 @@
+#####################################################################################################################################################
+#      _____          _              __      __           _              _____               _  _____                                          _    #
+#     / ____|        | |             \ \    / /          (_)            / ____|             | |/ ____|                                        | |   #
+#    | |    _   _ ___| |_ ___  _ __ __\ \  / /__ _ __ ___ _  ___  _ __ | (___   ___  ___  __| | |     ___  _ __ ___  _ __ ___   __ _ _ __   __| |   #
+#    | |   | | | / __| __/ _ \| '_ ` _ \ \/ / _ \ '__/ __| |/ _ \| '_ \ \___ \ / _ \/ _ \/ _` | |    / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` |   #
+#    | |___| |_| \__ \ || (_) | | | | | \  /  __/ |  \__ \ | (_) | | | |____) |  __/  __/ (_| | |___| (_) | | | | | | | | | | | (_| | | | | (_| |   #
+#     \_____\__,_|___/\__\___/|_| |_| |_|\/ \___|_|  |___/_|\___/|_| |_|_____/ \___|\___|\__,_|\_____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|   #
+#                                                                                                                                                   #
+#####################################################################################################################################################
+
 #The message the plugin is going to send when typed /version by a player
 #that doesn't have the "CustomVersionSeedCommand.original.versioncommand"
 #permission.
-#
+#####
 #NOTE: Hex Color support is implemented in 1.16 and later. You may NOT use
 #non-Hexadecimal Color Codes. (e.g. &f, &a, &4, etc.)
-#
+#####
+#############################################################################################
+### NOTE: Use https://htmlcolorcodes.com/ to generate Hex Color Codes on a color palette. ###
+#############################################################################################
+
 Version:
   message:
     - '&#ff0000Version'
     - 'Custom'
     - '&#00ff00Message'
-#
+
 #The message the plugin is going to send when typed /version by a player
 #that doesn't have the "CustomVersionSeedCommand.original.seedcommand"
 #permission.
-#
+#####
 #NOTE: Hex Color support is implemented in 1.16 and later. You may NOT use
 #non-Hexadecimal Color Codes. (e.g. &f, &a, &4, etc.)
-#
+
 Seed:
   message:
     - '&#ff0000Seed'
     - 'Custom'
     - '&#00ff00Message'
-#
+
+#The message that's going to be send, when the player has no permission
+#to perform the "/CustomVersionSeedCommand reload" Command
+#You have to give the "CustomVersionSeedCommand.reload" permission to make a player able to reload.
+
+reload_no_permission_message: "&#992233You do not have permission to reload CustomVersionSeedCommand"
+
 #end of config

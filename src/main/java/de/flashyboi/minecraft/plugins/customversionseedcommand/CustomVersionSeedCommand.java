@@ -1,5 +1,6 @@
 package de.flashyboi.minecraft.plugins.customversionseedcommand;
 
+import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.MainCommand;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.SeedCommand;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.VersionCommand;
 
@@ -20,6 +21,10 @@ public final class CustomVersionSeedCommand extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new VersionCommand(), this);
         Bukkit.getServer().getPluginManager().registerEvents(new SeedCommand(), this);
         log.info("Loaded Events successfully");
+        log.info("Loading Commands");
+        this.getCommand("CustomVersionSeedCommand").setExecutor(new MainCommand());
+        this.getCommand("CustomVersionSeedCommand").setTabCompleter(new MainCommand());
+        log.info("Loaded Commands successfully");
         this.saveDefaultConfig();
         log.info("Enabled!");
     }
@@ -27,5 +32,9 @@ public final class CustomVersionSeedCommand extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+    }
+
+    public static void onConfigReload() {
+        plugin.reloadConfig();
     }
 }

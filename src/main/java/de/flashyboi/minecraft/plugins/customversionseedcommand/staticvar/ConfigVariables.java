@@ -8,5 +8,6 @@ public class ConfigVariables {
     public static final String VERSION_SECTION = "Version";
     public static final String SEED_SECTION = "Seed";
     public static final String STRING_LIST_MESSAGE = "message";
+    public static final String NO_PERMISSION_RELOAD = "reload_no_permission_message";
 
 }
