@@ -17,12 +17,10 @@ public class SeedCommand implements Listener {
 
     private static final String ORIGINAL_SEED = "/minecraft:seed";
 
-    private final FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
-    private final List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.SEED_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
-
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerExecutingVersionCommand(PlayerCommandPreprocessEvent e) {
-
+        FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
+        List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.SEED_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
         String command = e.getMessage();
 
         if(command.equalsIgnoreCase("/seed")) {

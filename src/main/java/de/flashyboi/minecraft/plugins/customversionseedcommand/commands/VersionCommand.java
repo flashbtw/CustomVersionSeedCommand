@@ -17,22 +17,20 @@ public class VersionCommand implements Listener {
 
     private static final String BUKKIT_VERSION = "/bukkit:version";
 
-    private final FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
-    private final List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.VERSION_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
-
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerExecutingVersionCommand(PlayerCommandPreprocessEvent e) {
 
         String command = e.getMessage();
-
+        FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
+            List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.VERSION_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
         if (command.equalsIgnoreCase("/version")) {
-            customVersionCommand(e.getPlayer(), e);
+            customVersionCommand(e.getPlayer(), e, all_lines);
         } else if (command.equalsIgnoreCase("/ver")) {
-            customVersionCommand(e.getPlayer(), e);
+            customVersionCommand(e.getPlayer(), e, all_lines);
         }
     }
 
-    private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e) {
+    private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e, List<String> all_lines) {
         if(player.hasPermission("CustomVersionSeedCommand.original.versioncommand")) {
             e.setMessage(BUKKIT_VERSION);
         } else {

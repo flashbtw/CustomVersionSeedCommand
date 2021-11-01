@@ -33,4 +33,8 @@ public final class CustomVersionSeedCommand extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
+
+    public static void onConfigReload() {
+        plugin.reloadConfig();
+    }
 }

@@ -3,11 +3,11 @@ package de.flashyboi.minecraft.plugins.customversionseedcommand.commands;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.CustomVersionSeedCommand;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.staticvar.ConfigVariables;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.toolbox.HexCodeFormatter;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,13 +26,10 @@ public class MainCommand implements CommandExecutor, TabCompleter {
                 return false;
             }
             CustomVersionSeedCommand.plugin.reloadConfig();
-            sender.sendMessage("CustomVersionSeedCommand was reloaded!");
+            sender.sendMessage(ChatColor.of("#00ffe0")+"["+ChatColor.of("#8bff00")+"CustomVersionSeedCommand"+ChatColor.of("#00ffe0")+"]"+ChatColor.RED+" Reloaded Successfully!");
             return true;
         }
-        if (args.length > 1){
-            return false;
-        }
-        return true;
+        return false;
     }
 
     @Override
