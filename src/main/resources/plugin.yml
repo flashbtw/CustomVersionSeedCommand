@@ -18,4 +18,6 @@ permissions:
     description: "allows the player to see the actual seed"
   CustomVersionSeedCommand.reload:
     description: "allow the player to reload the config"
+  CustomVersionSeedCommand.allowtabcomplete:
+    description: "allow the player to tabcomplete after /version and /seed"
 

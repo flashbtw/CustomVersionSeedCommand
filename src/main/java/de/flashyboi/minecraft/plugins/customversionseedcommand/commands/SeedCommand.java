@@ -19,11 +19,12 @@ public class SeedCommand implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerExecutingVersionCommand(PlayerCommandPreprocessEvent e) {
+
         FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
         List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.SEED_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
         String command = e.getMessage();
 
-        if(command.equalsIgnoreCase("/seed")) {
+        if(command.toLowerCase().startsWith("/seed")) {
             Player player = e.getPlayer();
             if(player.hasPermission("CustomVersionSeedCommand.original.seedcommand")) {
                 e.setMessage(ORIGINAL_SEED);
