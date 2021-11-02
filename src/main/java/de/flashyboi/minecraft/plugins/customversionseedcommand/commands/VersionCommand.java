@@ -19,13 +19,16 @@ public class VersionCommand implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerExecutingVersionCommand(PlayerCommandPreprocessEvent e) {
-
         String command = e.getMessage();
         FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
             List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.VERSION_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
-        if (command.equalsIgnoreCase("/version")) {
+        if (command.toLowerCase().startsWith("/version")) {
             customVersionCommand(e.getPlayer(), e, all_lines);
-        } else if (command.equalsIgnoreCase("/ver")) {
+        } else if (command.toLowerCase().startsWith("/ver")) {
+            customVersionCommand(e.getPlayer(), e, all_lines);
+        } else if (command.toLowerCase().startsWith("/icanhasbukkit")) {
+            customVersionCommand(e.getPlayer(), e, all_lines);
+        } else if (command.toLowerCase().startsWith("/?")) {
             customVersionCommand(e.getPlayer(), e, all_lines);
         }
     }
