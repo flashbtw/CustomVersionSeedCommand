@@ -1,4 +1,4 @@
-package de.flashyboi.minecraft.plugins.customversionseedcommand.BlockTabCompletion;
+package de.flashyboi.minecraft.plugins.customversionseedcommand.blocktabcompletion;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;

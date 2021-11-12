@@ -17,14 +17,18 @@ import java.util.List;
 public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+        if (args.length<1 && (!(sender.hasPermission("CustomVersionSeedCommand.reload")))) {
+            sender.sendMessage(ChatColor.RED + "You don't have permission to use this command.");
+            return false;
+        }
+        if (!(sender.hasPermission("CustomVersionSeedCommand.reload"))) {
+            String no_perms_for_reload = CustomVersionSeedCommand.plugin.getConfig().getString(ConfigVariables.NO_PERMISSION_RELOAD);
+            HexCodeFormatter message = new HexCodeFormatter(no_perms_for_reload);
+            String msg = message.hexCodeFormatter();
+            sender.sendMessage(msg);
+            return false;
+        }
         if (args[0].equalsIgnoreCase("reload")) {
-            if (!(sender.hasPermission("CustomVersionSeedCommand.reload"))) {
-                String no_perms_for_reload = CustomVersionSeedCommand.plugin.getConfig().getString(ConfigVariables.NO_PERMISSION_RELOAD);
-                HexCodeFormatter message = new HexCodeFormatter(no_perms_for_reload);
-                String msg = message.hexCodeFormatter();
-                sender.sendMessage(msg);
-                return false;
-            }
             CustomVersionSeedCommand.plugin.reloadConfig();
             sender.sendMessage(ChatColor.of("#00ffe0")+"["+ChatColor.of("#8bff00")+"CustomVersionSeedCommand"+ChatColor.of("#00ffe0")+"]"+ChatColor.RED+" Reloaded Successfully!");
             return true;
@@ -35,6 +39,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         List<String> subcommands = new ArrayList<>();
+        if (!(sender.hasPermission("CustomVersionSeedCommand.reload"))) { return null; }
         if(args.length == 1) {
             subcommands.add("reload");
             return subcommands;

@@ -23,7 +23,5 @@ public class HexCodeFormatter {
             match = pattern.matcher(msg);
         }
     return msg;
-
     }
-
 }

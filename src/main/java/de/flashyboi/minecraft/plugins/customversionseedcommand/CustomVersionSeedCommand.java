@@ -1,6 +1,6 @@
 package de.flashyboi.minecraft.plugins.customversionseedcommand;
 
-import de.flashyboi.minecraft.plugins.customversionseedcommand.BlockTabCompletion.StopTabCompletion;
+import de.flashyboi.minecraft.plugins.customversionseedcommand.blocktabcompletion.StopTabCompletion;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.MainCommand;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.SeedCommand;
 import de.flashyboi.minecraft.plugins.customversionseedcommand.commands.VersionCommand;
@@ -41,9 +41,5 @@ public final class CustomVersionSeedCommand extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-    }
-
-    public static void onConfigReload() {
-        plugin.reloadConfig();
     }
 }
