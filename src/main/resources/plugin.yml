@@ -8,7 +8,7 @@ website: http://gammellounge.de
 
 commands:
   CustomVersionSeedCommand:
-    description: "§cUsage: /customversionseedcommand [reload]"
+    description: "the main command of the plugin 'CustomVersionSeedCommand'"
     aliases: [customvscommand, cvsc]
 
 permissions:

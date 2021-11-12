@@ -39,8 +39,11 @@ public class VersionCommand implements Listener {
 
     private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e, List<String> all_lines, int offset) {
         if(player.hasPermission("CustomVersionSeedCommand.original.versioncommand")) {
-            String argument = e.getMessage().substring(offset);
-            e.setMessage(BUKKIT_VERSION + " " + argument);
+            String command = e.getMessage();
+            if (command.length() > offset) {
+                String argument = command.substring(offset);
+                e.setMessage(BUKKIT_VERSION + " " + argument);
+            }
         } else {
             for (String one_line : all_lines) {
                 HexCodeFormatter message = new HexCodeFormatter(one_line);
