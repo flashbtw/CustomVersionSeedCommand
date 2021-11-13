@@ -23,19 +23,27 @@ public class VersionCommand implements Listener {
         FileConfiguration cfg = CustomVersionSeedCommand.plugin.getConfig();
             List<String> all_lines = cfg.getConfigurationSection(ConfigVariables.VERSION_SECTION).getStringList(ConfigVariables.STRING_LIST_MESSAGE);
         if (command.toLowerCase().startsWith("/version")) {
-            customVersionCommand(e.getPlayer(), e, all_lines);
+            int offset = 9;
+            customVersionCommand(e.getPlayer(), e, all_lines, offset);
         } else if (command.toLowerCase().startsWith("/ver")) {
-            customVersionCommand(e.getPlayer(), e, all_lines);
+            int offset = 5;
+            customVersionCommand(e.getPlayer(), e, all_lines, offset);
         } else if (command.toLowerCase().startsWith("/icanhasbukkit")) {
-            customVersionCommand(e.getPlayer(), e, all_lines);
+            int offset = 15;
+            customVersionCommand(e.getPlayer(), e, all_lines, offset);
         } else if (command.toLowerCase().startsWith("/?")) {
-            customVersionCommand(e.getPlayer(), e, all_lines);
+            int offset = 3;
+            customVersionCommand(e.getPlayer(), e, all_lines, offset);
         }
     }
 
-    private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e, List<String> all_lines) {
+    private void customVersionCommand(Player player, PlayerCommandPreprocessEvent e, List<String> all_lines, int offset) {
         if(player.hasPermission("CustomVersionSeedCommand.original.versioncommand")) {
-            e.setMessage(BUKKIT_VERSION);
+            String command = e.getMessage();
+            if (command.length() > offset) {
+                String argument = command.substring(offset);
+                e.setMessage(BUKKIT_VERSION + " " + argument);
+            }
         } else {
             for (String one_line : all_lines) {
                 HexCodeFormatter message = new HexCodeFormatter(one_line);
