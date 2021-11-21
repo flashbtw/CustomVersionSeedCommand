@@ -6,7 +6,7 @@
 
     <groupId>de.flashyboi.minecraft.plugins</groupId>
     <artifactId>CustomVersionSeedCommand</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <packaging>jar</packaging>
 
     <name>CustomVersionSeedCommand</name>

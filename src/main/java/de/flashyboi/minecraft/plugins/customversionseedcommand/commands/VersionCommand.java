@@ -34,6 +34,9 @@ public class VersionCommand implements Listener {
         } else if (command.toLowerCase().startsWith("/?")) {
             int offset = 3;
             customVersionCommand(e.getPlayer(), e, all_lines, offset);
+        } else if (command.toLowerCase().startsWith("/about")) {
+            int offset = 7;
+            customVersionCommand(e.getPlayer(), e, all_lines, offset);
         }
     }
 

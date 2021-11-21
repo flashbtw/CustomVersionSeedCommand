@@ -22,6 +22,8 @@ public class StopTabCompletion implements Listener {
                 e.setCancelled(true);
             } else if (buffer.startsWith("/seed")) {
                 e.setCancelled(true);
+            } else if (buffer.startsWith("/about")) {
+                e.setCancelled(true);
             }
         }
     }
